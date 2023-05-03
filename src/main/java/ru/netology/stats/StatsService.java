@@ -15,26 +15,26 @@ public class StatsService {
         int salesSum = 0;
         for (int i = 0; i < sales.length; i++) {
             salesSum = salesSum + sales[i];
-            salesAverage = salesSum / i;
+            salesAverage = salesSum / (i + 1);
         }
         return salesAverage;
     }
 
     public int maxSalesMonth(int[] sales) {
         int maxSalesMonth = 0;
-            for (int i = 0; i < sales.length; i++) {
-                if (sales[i] > sales[maxSalesMonth]) {
-                    maxSalesMonth = sales[i];
-                }
+        for (int i = 0; i < sales.length; i++) {
+            if (sales[i] >= sales[maxSalesMonth]) {
+                maxSalesMonth = i;
             }
+        }
         return maxSalesMonth + 1;
     }
 
     public int minSalesMonth(int[] sales) {
         int minSalesMonth = 0;
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i] < sales[minSalesMonth]) {
-                minSalesMonth = sales[i];
+            if (sales[i] <= sales[minSalesMonth]) {
+                minSalesMonth = i;
             }
         }
         return minSalesMonth + 1;
